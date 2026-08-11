@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Placement Aptitude Mock Test</title>
+<title>LogicWeed Aptitude Mock Test</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
 <style>
@@ -138,15 +138,15 @@
   <div class="ticket">
     <div class="ticket-top">
       <div class="eyebrow">Admit Ticket · No. PA-2026</div>
-      <h1>Placement Aptitude Mock Test</h1>
-      <p class="sub">40 questions covering Quantitative Aptitude, OOP and SQL. Once you start, the clock cannot be paused.</p>
+      <h1>LogicWeed Aptitude Mock Test</h1>
+      <p class="sub">55 questions covering Mathematics, Logical Reasoning and JavaScript. Once you start, the clock cannot be paused.</p>
     </div>
     <div class="perforation"></div>
     <div class="ticket-bottom">
       <div class="meta-row">
-        <div>DURATION<span>45:00 min</span></div>
-        <div>QUESTIONS<span>40</span></div>
-        <div>MARKING<span>+1 / −0.25</span></div>
+        <div>DURATION<span>65:00 min</span></div>
+        <div>QUESTIONS<span>55</span></div>
+        <div>MARKING<span>+2 / −0.25</span></div>
       </div>
       <label class="field-label" for="studentName">Enter your full name</label>
       <input type="text" id="studentName" placeholder="e.g. Priya Sharma" autocomplete="off">
@@ -165,7 +165,7 @@
         <div class="name" id="examCandName">—</div>
         <div class="progress" id="examProgress">0 / 40 answered</div>
       </div>
-      <div class="timer-badge mono" id="timerBadge">45:00</div>
+      <div class="timer-badge mono" id="timerBadge">65:00</div>
     </div>
   </div>
   <div class="exam-body" id="examBody"></div>
@@ -227,49 +227,64 @@
    QUESTION BANK
    ========================================================= */
 const QUESTIONS = [
-{t:"A number is first increased by 20% and then decreased by 20%. What is the overall percentage change?",o:["0%","2% decrease","4% decrease","4% increase"],c:2},
-{t:"Which OOP concept allows a child class to provide its own implementation of a method already defined in the parent class?",o:["Encapsulation","Method Overloading","Method Overriding","Abstraction"],c:2},
-{t:"The ratio of incomes of A and B is 4:5, while their expenditures are in the ratio 3:4. If both save ₹5,000 per month, what is A's income?",o:["₹15,000","₹20,000","₹25,000","₹30,000"],c:1},
-{t:"Which clause is used to filter groups after applying GROUP BY?",o:["WHERE","ORDER BY","HAVING","DISTINCT"],c:2},
-{t:"A train 180 m long crosses a pole in 9 seconds. What is its speed?",o:["60 km/h","72 km/h","80 km/h","90 km/h"],c:1},
-{t:"An article is marked 40% above its cost price and sold after giving a 10% discount. What is the profit percentage?",o:["24%","26%","30%","36%"],c:1},
-{t:"What will be the output?",code:"x = [1, 2, 3]\ny = x\ny.append(4)\nprint(x)",o:["[1, 2, 3]","[1, 2, 3, 4]","[4, 1, 2, 3]","Error"],c:1},
-{t:"A can complete a work in 12 days and B can complete it in 18 days. If they work together for 4 days, what fraction of the work remains?",o:["1/3","4/9","5/9","7/9"],c:2},
-{t:"A student's marks increase from 360 to 450. What is the percentage increase?",o:["20%","25%","30%","35%"],c:1},
-{t:"Consider the query below. What does it return?",code:"SELECT department, COUNT(*)\nFROM Employee\nGROUP BY department\nHAVING COUNT(*) > 5;",o:["Employees whose salary is greater than 5","Departments having more than 5 employees","Departments having exactly 5 employees","All employees grouped by salary"],c:1},
-{t:"Which principle of OOP hides internal implementation details and exposes only necessary functionality?",o:["Inheritance","Polymorphism","Abstraction","Composition"],c:2},
-{t:"If A:B = 3:4 and B:C = 8:9, then A:B:C is:",o:["3:4:9","6:8:9","3:8:9","6:8:18"],c:1},
-{t:"A person travels 60 km at 30 km/h and returns at 20 km/h. What is the average speed for the entire journey?",o:["24 km/h","25 km/h","26 km/h","28 km/h"],c:0},
-{t:"What will be printed?",code:'let x = 10;\nif (x > 5)\n  if (x > 15)\n    console.log("A");\n  else\n    console.log("B");',o:["A","B","AB","No output"],c:1},
-{t:"A shopkeeper sells an article for ₹1,440 at a loss of 10%. What should be the selling price to gain 20%?",o:["₹1,800","₹1,920","₹2,000","₹2,100"],c:1},
-{t:"A can complete a work in 20 days and B in 30 days. They work together for 6 days. The remaining work is completed by C in 4 days. In how many days can C alone complete the whole work?",o:["8 days","10 days","12 days","15 days"],c:2},
-{t:"Which query correctly finds employees whose salary is greater than the average salary?",o:["SELECT * FROM Employee WHERE salary > AVG(salary);","SELECT * FROM Employee WHERE salary > (SELECT AVG(salary) FROM Employee);","SELECT * FROM Employee HAVING salary > AVG(salary);","SELECT * FROM Employee GROUP BY salary > AVG(salary);"],c:1},
-{t:"A person's salary is increased by 10%, then by 20%. What is the total percentage increase?",o:["28%","30%","32%","35%"],c:2},
-{t:"Which of the following is NOT a feature of OOP?",o:["Encapsulation","Inheritance","Polymorphism","Compilation"],c:3},
-{t:"₹840 is divided among A, B and C in the ratio 3:4:5. What amount does C receive?",o:["₹280","₹320","₹350","₹400"],c:3},
-{t:"What will be the output?",code:'int x = 5;\ncout << ++x << " " << x++;',o:["5 6","6 6","6 7","5 5"],c:2},
-{t:"A car covers a certain distance at 40 km/h in 6 hours. At what speed should it travel to cover the same distance in 4 hours?",o:["50 km/h","55 km/h","60 km/h","65 km/h"],c:2},
-{t:"A shopkeeper uses a 900 g weight instead of 1 kg while selling goods at the cost price. What is his effective profit percentage?",o:["10%","11.11%","12.5%","15%"],c:1},
-{t:"Which JOIN returns all records from the left table and matching records from the right table?",o:["INNER JOIN","RIGHT JOIN","LEFT JOIN","FULL JOIN"],c:2},
-{t:"A and B together can complete a work in 10 days. A alone can complete it in 15 days. How many days will B alone take?",o:["20 days","25 days","30 days","35 days"],c:2},
-{t:"The price of a product is reduced by 25%. By what percentage must the reduced price be increased to get back the original price?",o:["25%","30%","33.33%","37.5%"],c:2},
-{t:"What is the main purpose of a constructor?",o:["Destroy an object","Initialize an object","Hide a class","Override a method"],c:1},
-{t:"The ages of A and B are in the ratio 4:5. After 6 years, their ages will be in the ratio 5:6. What is A's present age?",o:["18 years","20 years","24 years","30 years"],c:2},
-{t:"What will be printed?",code:"a = 10\nb = 20\na, b = b, a\nprint(a - b)",o:["10","-10","30","0"],c:1},
-{t:"Two trains travel towards each other at 54 km/h and 72 km/h. If their lengths are 250 m and 300 m respectively, how long will they take to completely cross each other?",o:["10 sec","12 sec","15 sec","20 sec"],c:2},
-{t:"An article is sold at a 15% profit. If its cost price is ₹800, what is the selling price?",o:["₹880","₹900","₹920","₹940"],c:2},
-{t:"What does the following query return?",code:"SELECT COUNT(*)\nFROM Employee\nWHERE salary BETWEEN 30000 AND 50000;",o:["Employees with salary strictly between 30,000 and 50,000","Employees with salary including 30,000 and 50,000","Only employees earning 30,000","Syntax error"],c:1},
-{t:"A can do a work in 8 days, B in 12 days and C in 24 days. If all three work together, how many days will they take?",o:["3 days","4 days","5 days","6 days"],c:1},
-{t:"In an examination, 30% students failed in Mathematics, 20% failed in English and 10% failed in both. What percentage passed in both subjects?",o:["50%","60%","70%","80%"],c:2},
-{t:"Which concept allows the same function/method name to behave differently depending on the object or parameters?",o:["Encapsulation","Polymorphism","Abstraction","Inheritance"],c:1},
-{t:"If 12 workers can complete a job in 15 days, how many workers are required to complete the same job in 9 days?",o:["18","20","22","25"],c:1},
-{t:"What will be the output?",code:"int x = 5;\nSystem.out.println(x++ + ++x);",o:["10","11","12","13"],c:2},
-{t:"A train running at 72 km/h crosses a platform in 25 seconds. If the train is 300 m long, what is the length of the platform?",o:["150 m","180 m","200 m","250 m"],c:2},
-{t:"Which statement is correct?",o:["WHERE can directly filter aggregate results after GROUP BY","HAVING is generally used to filter grouped/aggregate results","GROUP BY must always be used with ORDER BY","HAVING cannot use aggregate functions"],c:1},
-{t:"A trader buys an article for ₹2,000 and marks it 30% above cost price. He gives two successive discounts of 10% and 5%. What is his final profit percentage?",o:["10%","11.15%","11.5%","12%"],c:1}
+{t:"If a number is increased by 25% and then decreased by 25%, the net change is:",o:["No change","6.25% decrease","6.25% increase","12.5% decrease"],c:1},
+{t:"A shopkeeper marks an article 50% above cost price and gives a 20% discount. His profit percentage is:",o:["20%","25%","30%","15%"],c:0},
+{t:"A can complete a work in 15 days and B in 20 days. Working together, they complete it in:",o:["8 days","8.57 days","9 days","10 days"],c:1},
+{t:"A train 210 m long crosses a pole in 7 seconds. Its speed is:",o:["90 km/h","100 km/h","108 km/h","120 km/h"],c:2},
+{t:"The average of 10 numbers is 30. If one number 45 is replaced by 25, the new average is:",o:["27","28","29","29.5"],c:1},
+{t:"A sum amounts to ₹13,310 in 2 years at 10% compound interest per annum. The principal is:",o:["₹10,000","₹11,000","₹11,500","₹12,000"],c:1},
+{t:"If x:y = 4:7 and y:z = 14:9, then x:z is:",o:["8:9","9:8","4:9","8:7"],c:0},
+{t:"A man spends 80% of his income. If his income increases by 25% and expenditure increases by 15%, his savings increase by:",o:["45%","55%","65%","75%"],c:2},
+{t:"The remainder when 5^203 is divided by 8 is:",o:["1","3","5","7"],c:2},
+{t:"The HCF of 96, 144 and 240 is:",o:["16","24","32","48"],c:3},
+{t:"A boat travels 30 km downstream in 2 hours and the same distance upstream in 5 hours. The speed of the boat in still water is:",o:["9 km/h","10.5 km/h","12 km/h","15 km/h"],c:1},
+{t:"Two pipes fill a tank in 24 and 36 minutes respectively. A third pipe empties it in 72 minutes. If all are opened together, the tank fills in:",o:["16 min","17.5 min","18 min","20 min"],c:2},
+{t:"A person walks 5 km north, then 12 km east, then 5 km south. How far is he from the starting point?",o:["12 km","13 km","14 km","17 km"],c:0},
+{t:"If 6 men or 9 women can complete a work in 18 days, the efficiency ratio of one man to one woman is:",o:["2:3","3:2","1:1","9:6"],c:1},
+{t:"A mixture contains milk and water in the ratio 7:3. If 20 L water is added, the ratio becomes 7:5. Original quantity of mixture was:",o:["80 L","90 L","100 L","110 L"],c:2},
+{t:"The probability of getting at least one tail when a fair coin is tossed 4 times is:",o:["7/16","1/16","15/16","9/16"],c:2},
+{t:"A and B invest ₹50,000 and ₹75,000 respectively. A invests for 10 months and B for 6 months. Profit ratio is:",o:["10:9","9:10","2:3","4:5"],c:0},
+{t:"The smallest number which leaves remainder 7 when divided by 15, 20 and 25 is:",o:["300","307","315","325"],c:1},
+{t:"A person's age is thrice his son's age. After 12 years, their ages will be in ratio 2:1. The father's present age is:",o:["30","36","42","48"],c:1},
+{t:"If 3x + 2y = 24 and x - y = 3, then x + y equals:",o:["7","8","9","10"],c:2},
+{t:"Find the next number: 2, 5, 11, 23, 47, ?",o:["93","94","95","96"],c:2},
+{t:"A shopkeeper sells two items at ₹1200 each. On one he makes a profit of 20% and on the other a loss of 20%. His overall result is:",o:["No profit no loss","4% loss","4% profit","8% loss"],c:1},
+{t:"Find the next term: BY, CX, DW, EV, ?",o:["FT","FU","GU","FV"],c:1},
+{t:"If COMPUTER is coded as DPNQVUFS, then MARKET is coded as:",o:["NBSLFU","NBSLFV","MBSLFU","NBTLFU"],c:0},
+{t:`Pointing to a woman, Aman says, "She is the daughter of my father's only sister." How is the woman related to Aman?`,o:["Sister","Cousin","Niece","Aunt"],c:1},
+{t:"P is taller than Q. R is taller than P. S is shorter than Q. T is taller than R. Who is the tallest?",o:["P","Q","R","T"],c:3},
+{t:"Five people M, N, O, P and Q sit in a row. M is left of N, N is left of O, P is right of O, and Q is left of M. Who sits in the middle?",o:["M","N","O","P"],c:1},
+{t:"If all mangoes are fruits and some fruits are sweet, which conclusion is definitely true?",o:["All mangoes are sweet","Some mangoes are sweet","Mangoes are fruits","No mangoes are sweet"],c:2},
+{t:"In a certain code, TUESDAY is written as 1234567 and DAY is written as 567. What is the code for TUE?",o:["123","124","132","234"],c:0},
+{t:"A person faces west. He turns 90° anticlockwise, then 180° clockwise. Which direction is he facing?",o:["North","South","East","West"],c:0},
+{t:"Find the odd one out:",o:["49","64","90","121"],c:2},
+{t:"In a class, Meera is 14th from the top and 21st from the bottom. Total students are:",o:["33","34","35","36"],c:1},
+{t:"If today is Tuesday, what day will it be after 150 days?",o:["Friday","Saturday","Sunday","Monday"],c:0},
+{t:"Statement: Some engineers are musicians. All musicians are disciplined. Conclusion: I. Some engineers are disciplined. II. All disciplined people are musicians.",o:["Only I follows","Only II follows","Both follow","Neither follows"],c:0},
+{t:"A clock shows 4:20. The angle between the hour and minute hands is:",o:["5°","10°","12°","20°"],c:1},
+{t:"Six persons A, B, C, D, E, F stand in a line. A is before B, C is after D, E is before A, and F is after B. Which arrangement is possible?",o:["E-A-B-D-C-F","A-E-B-D-C-F","E-B-A-D-C-F","D-C-E-A-F-B"],c:0},
+{t:`If '+' means '×', '−' means '+', '×' means '−', and '÷' means '÷', then 8 + 2 − 3 × 5 equals:`,o:["10","12","14","16"],c:2},
+{t:"Ravi walks 4 km east, turns left and walks 3 km, then turns left again and walks 4 km. How far is he from the starting point?",o:["3 km","4 km","5 km","7 km"],c:0},
+{t:"What is the output?",code:`let x = 4; console.log(x++ + ++x);`,o:["8","9","10","11"],c:0},
+{t:"What is the output?",code:`console.log(typeof undefined);`,o:["undefined","object","null","string"],c:0},
+{t:"What is the output?",code:`console.log(1 + '2' + 3);`,o:["6","'123'","'33'","123"],c:1},
+{t:"What is the output?",code:`console.log(3 * '2' + 1);`,o:["'61'","7","32","NaN"],c:1},
+{t:"What is the output?",code:`console.log([] == 0);`,o:["true","false","undefined","error"],c:0},
+{t:"What is the output?",code:`let a = [1,2]; a.push(3,4); console.log(a.length);`,o:["2","3","4","undefined"],c:2},
+{t:"What is the output?",code:`console.log('7' === 7);`,o:["true","false","7","TypeError"],c:1},
+{t:"Which method creates a new array containing only elements that pass a test?",o:["map()","forEach()","filter()","reduce()"],c:2},
+{t:"What is the output?",code:`let y = 15; function test(){ let y = 25; } test(); console.log(y);`,o:["15","25","undefined","ReferenceError"],c:0},
+{t:"What is the output?",code:`console.log(Boolean('0'));`,o:["false","true","'0'","undefined"],c:1},
+{t:"What is the output?",code:`const p = {a:1}; const q = p; q.a = 9; console.log(p.a);`,o:["1","9","undefined","error"],c:1},
+{t:"Which statement about const and let is correct?",o:["const allows reassignment","const bindings cannot be reassigned","let is function-scoped","Both are hoisted the same way as var"],c:1},
+{t:"What is the output?",code:`console.log([1,2,3,4].filter(x => x % 2 === 0));`,o:["[2]","[2,4]","[1,3]","4"],c:1},
+{t:"What is the output?",code:`setTimeout(() => console.log('X'), 0); console.log('Y');`,o:["X then Y","Y then X","X only","Error"],c:1},
+{t:"What is the output?",code:`console.log(NaN === NaN);`,o:["true","false","undefined","NaN"],c:1},
+{t:"Which array method reduces the array to a single value by applying a function cumulatively?",o:["map()","reduce()","filter()","some()"],c:1},
+{t:"What is the output?",code:`console.log(typeof function(){});`,o:["'function'","'object'","'undefined'","'callable'"],c:0}
 ];
 
-const DURATION_SECONDS = 45 * 60;
+const DURATION_SECONDS = 65 * 60;
 let answers = new Array(QUESTIONS.length).fill(null);
 let timeLeft = DURATION_SECONDS;
 let timerInterval = null;
@@ -389,7 +404,7 @@ async function submitExam(isAuto){
     else { wrong++; status = 'wrong'; }
     return { q: qi+1, given: given === null ? null : String.fromCharCode(65+given), correct: String.fromCharCode(65+q.c), status };
   });
-  const finalScore = Math.round((correct - wrong * 0.25) * 100) / 100;
+  const finalScore = Math.round((correct * 2 - wrong * 0.25) * 100) / 100;
 
   const record = {
     name: candidateName,
@@ -433,9 +448,9 @@ function showAdminLogin(){
 
 function checkAdminLogin(){
   const u = document.getElementById('adminUser').value.trim();
-  const p = document.getElementById('adminPass').value;
+  const p = document.getElementById('adminPass').value.trim();
   const err = document.getElementById('loginError');
-  if(u === ADMIN_USERNAME && p === ADMIN_PASSWORD){
+  if(u.toLowerCase() === ADMIN_USERNAME.toLowerCase() && p === ADMIN_PASSWORD){
     err.textContent = '';
     document.getElementById('screen-admin-login').classList.add('hidden');
     loadAdmin();
